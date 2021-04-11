@@ -1,4 +1,6 @@
 from sly import Lexer
+from sly import Parser
+
 class BasicLexer(Lexer):
     tokens = { NAME, NUMBER, STRING }
     ignore = '\t '
@@ -30,8 +32,6 @@ class BasicLexer(Lexer):
     def newline(self, t):
         self.lineno = t.value.count('\n')
 
-
-from sly import Parser
 
 class BasicParser(Parser):
     #tokens are passed from lexer to parser
